@@ -1,0 +1,125 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	<title>One hostel: Hostel Management System</title>
+	<style>
+		.h1 {
+			font-size: 60px;
+			font-family: work sans semi bold;
+		}
+		.tr1 {
+			color: white;
+			height: 50px;
+		}
+		.tr4 {
+			height: 130px;
+			background: rgba(0, 0, 0, 0.75);
+		}
+		.table {
+			background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(/static/images/m.jpg);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			color: white;
+			border: solid black;
+			background-attachment: fixed;
+		}
+		.menu a {
+			background-color: black;
+			color: white;
+			display:inline-block;
+			padding: 12px;
+			text-decoration: none;
+			overflow: hidden;
+			border-radius: 12px;
+		}
+		.menu a:hover {
+			background-color: tomato;
+			border-radius: 12px;
+		}
+		.menu a.active {
+			background-color: #009999;
+			color: white;
+			border-radius: 12px;
+		}
+		.submit_btn {
+			float: right;
+		}
+		i {
+			color: #74786c;
+		}
+		#I1 {
+			color: red;
+		}
+		#p1 {
+			color: #9f91e3;
+		}
+		.notification {
+			width:5px;
+			height:10 px;
+			overflow: auto;
+			color: white;
+			background: rgba(0, 0, 0, 0.3);
+			border-radius: 10px;
+			padding: 15px;
+		}
+		.innertable {
+			color: white;
+			overflow: auto;
+		}
+	</style>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+	<table  width="100%" cellspacing="0" cellpadding="10px" class="table" border="0" > 
+		<tr class="tr1">
+			<td colspan=5>
+				<h1 class="h1" align="center">Hostel Management System</font></h1>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5" valign="center">
+				<center>
+				<form class="menu">
+					<a href="{% url 'homepage'%}" class=''>HOME</a>
+						<a href="{% url 'roomAllocation'%}" class=''>ROOM ALLOCATION</a>
+						<a href="{% url 'guidelines'%}" class=''>ROOM GUIDELINES</a>
+						<a href="{% url 'Mservice'%}" class=''>MAINTENANCE SERVICE</a>
+						<a href="{% url 'notification'%}" class='active'>NOTIFICATION</a>
+						<a href="{% url 'logout'%}" class=''>LOG OUT</a>
+				</form>
+				</center>
+			</td>
+		</tr>
+		<tr class="tr3">
+			<td width="10%"></td>
+			<td width="7%"></td>
+			<td class="notification">
+				<h1 style=" color:  #bfbfbf">Notifications</h1>
+				<center>	
+					{% if stu %}
+					<table border="1" width="100%" cellspacing="0" cellpadding="12px" class="innertable">
+						{% for st in stu %}
+						<tr>
+							<td><i class="fas fa-bell" id="I1"></i> {{st.noti}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+					{% else %}
+					<h1 style="color: white"><i class="fas fa-bell"></i> No notifications to show.</h1>
+					{% endif %}	
+				</center><br><br><br><br><br><br><br>
+			</td>
+			<td width="7%"></td>
+			<td width="10%"></td>
+		</tr>
+		<tr class="tr4">
+			<td></td>
+			<td colspan="4">
+				<h3>For more information contact</h3>
+				<a href="https://accounts.google.com">kesang984@gmail.com</a><br> Phone number #17955304<br>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

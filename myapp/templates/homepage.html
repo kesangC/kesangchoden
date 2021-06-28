@@ -1,0 +1,184 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	{% load static %}
+	<title>Hostel Management System</title>
+	<style>
+		.table {
+			border:solid black;
+			position: relative;
+			color: white;
+			overflow: hidden;
+			background: rgba(0, 0, 0, 0.2);
+			min-height: 100vh;
+			background-attachment: fixed;
+			background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/static/images/GCIT.jpg);
+			background-repeat: no-repeat;
+			background-position: 100% 0px;
+			background-size: cover;
+
+		}
+		.h1 {
+			font-size: 60px;
+			font-family: work sans semi bold;
+
+		}
+		.tr1 {
+			height: 50px;
+			vertical-align: bottom;
+		}
+		.tr2 {
+			height: 362px;
+		}
+		.tr4 {
+			background: rgba(0, 0, 0, 0.5);
+			height: 120px;
+		}
+		.main {
+			padding-top: 30px;
+			vertical-align: top;
+		}
+		button {
+			background-color: black;
+			color: white;
+			padding: 16px;
+			font-size: 16px;
+			border: none;
+			border-radius: 15px;
+			cursor: help;
+		}
+		.dropdown {
+			display: inline-block;
+		}
+		.dropdown-content {
+		  	display: none;
+		  	position: absolute;
+		}
+		.dropdown-content a {
+		  	color: white;
+		  	padding: 10px 10px;
+		  	text-decoration: none;
+		  	display: block; 	
+		}
+		.dropdown-content a:hover {
+			border-bottom: 3px solid rgb(0, 153, 153);
+		}
+		
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		#imgdiv {
+			display: none;
+			padding: 9px;
+			text-align: center;
+			
+		}
+		.imgdiv1 {
+			background-color: black;
+			color: white;
+			width: 200px;
+			border-radius: 15px;
+		}
+		#social {
+			padding: 10px 10px;
+			width: 100%;
+			font-size: 15px;
+			border-radius: 15px;
+			background-color: ;
+		}
+		.socialpic:hover {
+		  	-ms-transform: scale(1.5); 
+		 	-webkit-transform: scale(3.5); 
+		  	transform: scale(3.5); 
+		}
+		img {
+			border-radius: 12px;
+			box-shadow: 10px 10px 5px #ccc;
+		}
+		
+	</style>
+
+	<script src="https://code.jquery.com/jquery-2.1.4.js">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		$("#social").click(function(){
+		  $("#imgdiv").slideToggle(1000);
+		});
+		});
+
+		$(document).ready(function(){
+		$("#mission").click(function(){
+		  $("#m1").slideToggle(1000);
+		});
+		});
+
+		$(document).ready(function(){
+		$("#vision").click(function(){
+		  $("#v1").slideToggle(1000);
+		});
+		});
+	</script>
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+	<table  width="100%" cellspacing="0" cellpadding="10" class="table" border="0" > 
+		<tr class="tr1">
+			<td colspan="3">
+				<h1 class="h1" align="center">Hostel Management System</font></h1>
+			</td>
+		</tr>
+		<tr class="tr2">
+			<td width="20%" valign="top">
+				<div class="dropdown">
+					<button class="dropbtn"><i class="fas fa-bars"></i></button>
+					<div class="dropdown-content">
+						<a href="{% url 'homepage'%}" class='active'>HOME</a>
+						<a href="{% url 'roomAllocation'%}" class=''>ROOM ALLOCATION</a>
+						<a href="{% url 'guidelines'%}" class=''>ROOM GUIDELINES</a>
+						<a href="{% url 'Mservice'%}" class=''>MAINTENANCE SERVICE</a>
+						<a href="{% url 'notification'%}" class=''>NOTIFICATION</a>
+						<a href="{% url 'logout'%}" class=''>LOG OUT</a>
+					</div>
+				</div>
+			</td>
+			<td class="main">
+				<center>
+					<h3 id="mission">Mission:</h3>
+					<p style="color: #ffb366">To build an effective web application for students residing in the hostel.</p>
+					<h3 id="vision" >Vision:</h3>
+					<p style="color: #ffb366">
+						To offer timely room maintenance services,<br>
+						To provide room allocation details along with hostel guidelines,<br>
+						To promote effective communication between students and the college administration system.<br>
+					</p>
+				</ul>
+			</center>
+			</td>
+			<td width="23%" valign="top">
+				<div class="imgdiv1">
+					<button id="social">Follow us on:</button>
+					<div id="imgdiv">
+						<a href="https://www.instagram.com/"><img class="socialpic" src="{%static 'images/instra.jpeg'%}" width="70px" height="70px"></a>
+						<a href="https://touch.facebook.com/"><img class="socialpic" src="{%static 'images/facebook.png'%}" width="70px" height="70px"></a>
+						<a href="https://accounts.snapchat.com/"><img class="socialpic" src="{%static 'images/snap.png'%}" width="70px" height="70px"></a>
+						<a href="https://web.whatsapp.com/"><img class="socialpic" src="{%static 'images/watsapp.png'%}" width="70px" height="70px"></a>
+						<a href="https://www.tiktok.com/"><img class="socialpic" src="{%static 'images/tit.png'%}" width="70px" height="70px"></a>
+						<a href="https://twitter.com/"><img class="socialpic" src="{%static 'images/twitter.png'%}" width="70px" height="70px"></a>
+					</div>	
+				</div>
+			</td>
+		</tr>
+		<tr class="tr4">
+			<td></td>
+			<td colspan="2">
+				<h3>For more information contact</h3>
+				<a href="https://accounts.google.com">kesang984@gmail.com</a><br> Phone number #17955304<br>
+				</td>
+		</tr>
+	</table>
+</body>
+</html>

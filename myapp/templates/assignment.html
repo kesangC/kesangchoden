@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}  
+	<title>Hostel Management System</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+	<style>
+		.tr1 {
+			padding: 10px;
+		}
+		.tr2 {
+			height: 90px;
+		}
+		.tr3 {
+			color: black;
+			height: 50px;
+		}
+		.tr4 {
+			height: 90px;
+		}
+		.tr5 {
+			height: 150px;
+			color: white;
+			background: rgba(0,0,0,0.5);
+		}
+		.table {
+			background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/static/images/y.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			background-color: #167d7d;
+			color: white;
+			border: solid black;
+			background-attachment: fixed;
+		}
+		.mainpage {
+			padding:  0px 45px;
+			margin: 50px;
+			border-radius: 50px;
+			height: 70px;
+			background: rgba(180,175,162,0.37);
+		}
+		#btn {
+			background-color: #807974;
+			color: white;
+			border-radius: 12px;
+			width: 25%;
+			margin: 20px;
+			height: 30px;
+			float: right;
+			cursor: pointer;
+		}
+		.h1 {
+			font-size: 60px;
+			font-family: work sans semi bold;
+		}
+		a {
+			color: black;
+		}
+	</style>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+	<table width="100%" cellspacing="0" class="table" border="0">
+		<tr class="tr1">
+			<td colspan="4">	
+				<h1 class="h1" align="center">Hostel Management System</font></h1>
+			</td>
+		</tr>
+		<tr class="tr2">
+			<td colspan="4"></td>
+		</tr>
+		<tr class="tr3">
+			<td width="33%"></td>
+			<td></td>
+			<td class="mainpage">
+				<center>
+					<h1 style="font-family: suez one">Login</h1>
+				</center>
+				<form method="POST">
+					{% csrf_token %}
+					<b id="error"style="color:white;">{{error}}</b> <br><br>
+					<label>User id:</label>
+					&nbsp &nbsp &nbsp&nbsp
+					<input type="text" name="username" placeholder="Enter_username" required=""><br><br>
+					<label>Password:</label>
+					&nbsp&nbsp
+					<input type="Password" name="password" placeholder="Enter_password" required=""><br><br>
+					<a href="" class="forgotpw">Forgot password?</a>
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					<input type="checkbox">Show password
+					<br><br>
+					<input id="btn" type="submit" value="Login" /><br>
+					<a href="{% url 'Signup'%}">Register</a><br><br>
+				</form>
+			</td>
+			<td width="33%"></td>
+		</tr>
+		<tr class="tr4">
+			<td colspan="4"></td>
+		</tr>
+		<tr class="tr5">
+			<td></td>
+			<td colspan="2">
+				<center>
+						I'm always looking for new and exiciting opportunities. Let's connect <a href="https://accounts.google.com">kesang984@gmail.com</a> Phone number 17955304<br>
+				</center>
+			</td>
+			<td width="33%"></td>
+		</tr>
+	</table>
+</body>
+</html>

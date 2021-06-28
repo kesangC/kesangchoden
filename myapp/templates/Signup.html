@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Signup</title>
+	{% load static %}
+	<style type="text/css">
+		form{
+			position:relative;top:50px;
+			width:40%;
+			border-radius:12px;
+			color:white;
+			height:350px;
+		}
+		body{
+		    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(/static/images/y.png);
+		    background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			color: white;
+			background-attachment: fixed;
+		}
+		#btn{
+			width: auto;
+        	height:25px;
+			cursor: pointer;
+			border-radius: 6px;
+			background-color:tomato;
+			color:white;
+			font-size:13px;
+			border:none;
+		}
+		.btn{
+			width: 75%;
+        	height:23px;
+        	border-radius: 6px;
+        	border:none;
+        	background: #bababa;
+		}
+		#login{
+			width: 75%;
+        	height:26px;
+        	border-radius: 6px;
+        	border:none;
+        	background-color:#215e28;
+		}
+		.main {
+			background: rgba(0,0,0,0.5);
+			width:50%;
+			border-radius:12px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<div class="main">
+			<form method="post" >
+				<h1>Register</h1>
+				{% csrf_token %}		
+				<label for="id_username">Username:</label>
+				<br>
+				<input id="user1"class="btn" type="text" name="username" required="id_username">
+				<br><br>
+				<label for="id_password1">Password:</label>
+				<br>
+				<input id="pass1"class="btn" type="password" name="password1" required id="id_password1">
+				<br><br>
+				<label for="id_password2">Re-enter password.</label>
+				<br>
+				<input id="pass2"class="btn" type="password" name="password2" autocomplete="new-password" required id="id_password2">
+				<br><br>
+				<input id="btn" type="submit" value="Register"><br>
+				<h1 style="color:#ed0505; font-size:20px">{{error}}</h1>
+				<h1 style="color:green; font-size:20px">{{info}}</h1>
+			</form>
+			<br><br><br>
+			<a style="text-decoration: none;font-size:20px; color: white"href="{% url 'assignment'%}">Done</a>	
+		</div>
+	</center>
+</body>
+</html>

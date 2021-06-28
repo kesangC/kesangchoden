@@ -1,0 +1,97 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	{% load static %} 
+	<title>Hostel Management System</title>
+	<style>
+		.h1 {
+			font-size: 60px;
+			font-family: work sans semi bold;
+		}
+		.tr1 {
+			color: #e6e6e6;
+			height: 50px;
+		}
+		.tr4 {
+			height: 130px;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		.table {
+			background-image:  linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(/static/images/k.jpg);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			color: #7a7d74;
+			border: solid black;
+			background-attachment: fixed;
+		}
+		.menu a {
+			background-color: black;
+			color: white;
+			display:inline-block;
+			padding: 12px;
+			text-decoration: none;
+			overflow: hidden;
+			border-radius: 12px;
+		}
+		.menu a:hover {
+			background-color: tomato;
+			border-radius: 12px;
+		}
+		.menu a.active {
+			background-color: #009999;
+			color: white;
+			border-radius: 12px;
+		}
+		.submit_btn {
+			float: right;
+		}
+		a {
+			display: block;
+			text-decoration: none;
+		}
+		i{
+			color: black;
+		}
+		
+	</style>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+	<table  width="100%" cellspacing="0" cellpadding="10" class="table" border="0"> 
+		<tr class="tr1">
+			<td colspan=3>
+				<h1 class="h1" align="center" style="color: white">Hostel Management System</font></h1>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" valign="center">
+				<center>
+				<form class="menu">
+					<a href="{% url 'homepage'%}" class=''>HOME</a>
+						<a href="{% url 'roomAllocation'%}" class=''>ROOM ALLOCATION</a>
+						<a href="{% url 'guidelines'%}" class=''>ROOM GUIDELINES</a>
+						<a href="{% url 'Mservice'%}" class=''>MAINTENANCE SERVICE</a>
+						<a href="{% url 'notification'%}" class=''>NOTIFICATION</a>
+						<a href="{% url 'logout'%}" class='active'>LOG OUT</a>
+				</form>
+				</center>
+			</td>
+		</tr>
+		<tr style="height: 300px;" valign="top">
+			<td width="10%"> </td>
+			<td>
+				<a href="{% url 'assignment'%}" class='' style="font-size: 33px; color: #ff9966"><i class="fas fa-sign-out-alt"></i> <b>Log out</b></a>
+			</td>
+			<td width="10%"></td>
+		</tr>
+		<tr class="tr4">
+			<td></td>
+			<td colspan="3" style="color: white">
+				<h3 >For more information contact</h3>
+				<a href="https://accounts.google.com">kesang984@gmail.com</a><br> Phone number #17955304<br>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

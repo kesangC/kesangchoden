@@ -1,0 +1,132 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	{% load static %}
+	<title>Hostel Management System</title>
+	<style>
+		.h1 {
+			font-size: 60px;
+			font-family: work sans semi bold;
+		}
+		.tr1 {
+			height: 50px;
+			color: white;
+		}
+		.tr5 {
+			height: 130px;
+			background: rgba(0,0,0,0.5);
+			color: white;
+		}
+		.table {
+			background-color: #167d7d;
+			border: solid black;
+			background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/static/images/g.jpg);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			color: #878a83;
+			background-attachment: fixed;
+
+		}
+		.innertable {
+			background: rgba(0, 0, 0, 0.5);
+			color: white;
+		}
+		.menu a {
+			background-color: black;
+			color: white;
+			display:inline-block;
+			padding: 12px;
+			text-decoration: none;
+			overflow: hidden;
+			border-radius: 12px;
+		}
+		.menu a:hover {
+			background-color: tomato;
+			border-radius: 12px;
+		}
+		.menu a.active {
+			background-color: #009999;
+			color: white;
+			border-radius: 12px;
+		}
+		a {
+			color: blue;
+		}
+
+	</style>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+	<table  width="100%" cellspacing="0" cellpadding="10" class="table" border="0"> 
+		<tr class="tr1">
+			<td colspan=3>
+				<h1 class="h1" align="center">Hostel Management System</font></h1>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" valign="center">
+				<div id="navbar">
+				<center>
+				<form class="menu">
+					<a href="{% url 'homepage'%}" class=''>HOME</a>
+						<a href="{% url 'roomAllocation'%}" class='active'>ROOM ALLOCATION</a>
+						<a href="{% url 'guidelines'%}" class=''>ROOM GUIDELINES</a>
+						<a href="{% url 'Mservice'%}" class=''>MAINTENANCE SERVICE</a>
+						<a href="{% url 'notification'%}" class=''>NOTIFICATION</a>
+						<a href="{% url 'logout'%}" class=''>LOG OUT</a>
+				</form>
+				</center>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<center>
+					<h1 style="color:  #bfbfbf">Room allocation details:</h1>
+				</center>
+			</td>
+			<td></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td>
+				<center>			
+					{% if stu %}
+					<table border="1" width="60%" cellspacing="0" cellpadding="12px" class="innertable">
+						<tr>
+							<td>ID</td>
+							<td>Name</td>
+							<td>Student Id</td>
+							<td>Block</td>
+							<td>Room number</td>
+						</tr>
+						{% for st in stu %}
+						<tr>
+							<td>{{st.id}}</td>
+							<td>{{st.Name}}</td>
+							<td>{{st.Student_Id}}</td>
+							<td>{{st.Block}}</td>
+							<td>{{st.Room_number}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+					{% else %}
+					<h1>No data</h1>
+					{% endif %}<br><br><br>				
+				</center>
+			</td>
+			<td></td>
+		</tr>
+		<tr class="tr5">
+			<td></td>
+			<td colspan="3">
+				<h3>For more information contact</h3>
+				<a href="https://accounts.google.com">kesang984@gmail.com</a><br> Phone number #17955304<br>
+				</td>
+		</tr>
+	</table>
+</body>
+</html>

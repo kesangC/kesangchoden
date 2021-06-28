@@ -1,0 +1,109 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	{% load static %}
+	<title>Hostel Management System</title>
+	<style>
+		.h1 {
+			font-size: 60px;
+			font-family: work sans semi bold;
+		}
+		.tr1 {
+			height: 50px;
+		}
+		.tr4 {
+			height: 130px;
+			background: rgba(0,0,0,0.5);
+		}
+		.table {
+			background-color: #167d7d;
+			border: solid black;
+			background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/static/images/o.jpg);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			color: white;
+			background-attachment: fixed;
+		}
+		.menu a {
+			background-color: black;
+			color: white;
+			display:inline-block;
+			padding: 12px;
+			text-decoration: none;
+			overflow: hidden;
+			border-radius: 12px;
+		}
+		.menu a:hover {
+			background-color: tomato;
+			border-radius: 12px;
+		}
+		.menu a.active {
+			border-radius: 12px;
+			background-color: #009999;
+			color: white;
+		}
+		
+		.innertable{
+			background: rgba(0, 0, 0, 0.5);
+			color: white;
+		}
+	</style>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+	<table  width="100%" cellspacing="0" cellpadding="10" class="table" border="0"> 
+		<tr class="tr1">
+			<td colspan=3>
+				<h1 class="h1" align="center">Hostel Management System</font></h1>
+
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" valign="center">
+				<center>
+				<form class="menu">
+					<a href="{% url 'homepage'%}" class=''>HOME</a>
+					<a href="{% url 'roomAllocation'%}" class=''>ROOM ALLOCATION</a>
+					<a href="{% url 'guidelines'%}" class='active'>ROOM GUIDELINES</a>
+					<a href="{% url 'Mservice'%}" class=''>MAINTENANCE SERVICE</a>
+					<a href="{% url 'notification'%}" class=''>NOTIFICATION</a>
+					<a href="{% url 'logout'%}" class=''>LOG OUT</a>
+				</form>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td width="10%"></td>
+			<td>
+				<marquee> Every student is expected to follow the hostel rules and regulations.</marquee>
+					<center>	
+					{% if stu %}
+				
+					<table border="1" width="100%" cellspacing="0" cellpadding="12px" class="innertable">
+						<tr>
+							<th style="font-size: 30px; color:  #bfbfbf">Rules and Guidelines</th>
+						</tr>
+						{% for st in stu %}
+						<tr>
+							<td>{{st.Rules}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+					{% else %}
+					<h1>No data</h1>
+					{% endif %}	
+				</center><br><br><br><br>
+			</td>
+			<td width="10%"></td>
+		</tr>
+		<tr class="tr4">
+			<td></td>
+			<td colspan="3">
+				<h3>For more information contact</h3>
+				<a href="https://accounts.google.com"> kesang984@gmail.com</a> <br> Phone number #17955304<br>
+				</td>
+		</tr>
+	</table>
+</body>
+</html>

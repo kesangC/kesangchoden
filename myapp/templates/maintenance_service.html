@@ -1,0 +1,151 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	{% load static %}
+	<title>Hostel Management System</title>
+	<style>
+		.h1 {
+			font-size: 60px;
+			font-family: work sans semi bold;
+		}
+		.tr1 {
+			color: white;
+			height: 50px;
+		}
+		.tr2 {
+			color: White;
+		}
+		.tr3 {
+			height: 70px;
+		}
+		.tr4 {
+			
+		}
+		.tr5 {
+			height: 130px;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		.table {
+			background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(/static/images/h.jpg);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			color: white;
+			border: solid black;
+			background-attachment: fixed;
+		}
+		.innertable {
+			background: rgba(0, 0, 0, 0.75);
+			color: white;
+		}
+		.menu a {
+			background-color: black;
+			color: white;
+			display:inline-block;
+			padding: 12px;
+			text-decoration: none;
+			overflow: hidden;
+			border-radius: 12px;
+		}
+		.menu a:hover {
+			background-color: tomato;
+			border-radius: 12px;
+		}
+		.menu a.active {
+			background-color: #009999;
+			color: white;
+			border-radius: 12px;
+		}
+		.submit_btn {
+			float: right;
+		
+	</style>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+	<table  width="100%" cellspacing="0" cellpadding="10" class="table" border="0"> 
+		<tr class="tr1">
+			<td colspan=5>
+				<h1 class="h1" align="center">Hostel Management System</font></h1>
+			</td>
+		</tr>
+		<tr class="tr2">
+			<td colspan="5" valign="center">
+				<center>
+				<form class="menu">
+					<a href="{% url 'homepage'%}" class=''>HOME</a>
+					<a href="{% url 'roomAllocation'%}" class=''>ROOM ALLOCATION</a>
+					<a href="{% url 'guidelines'%}" class=''>ROOM GUIDELINES</a>
+					<a href="{% url 'Mservice'%}" class='active'>MAINTENANCE SERVICE</a>
+					<a href="{% url 'notification'%}" class=''>NOTIFICATION</a>
+					<a href="{% url 'logout'%}" class=''>LOG OUT</a>
+				</form>
+				</center>
+			</td>
+		</tr>
+		<tr class="tr3">
+			<td width="10%"></td>
+			<td width="20%"></td>
+			<td>
+				
+			</td>
+			<td width="20%"></td>
+			<td width="10%"></td>
+		</tr>
+		<tr class="tr4">
+			<td></td>
+			<td></td>
+			<td>
+				<table width="100%" cellspacing="0" cellpadding="10" class="innertable" border="1">
+					<tr>
+						<td>
+							<form name="form1" action="" method="POST">
+								{% csrf_token %}
+								<center><h4 style="font-size: 30px; color:  #bfbfbf">Maintenance form:</h4></center>
+								<label>Name:</label>
+								&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+								<input type="text" name="Name" required="">
+								<br><br>
+								<label>Year:</label>
+								&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+								<input type="text" name="Year" required="">
+								<br><br>
+								<label>Name of block:</label>
+								&nbsp &nbsp &nbsp&nbsp &nbsp
+								<input type="text" name="Name_of_block" required="">
+								<br><br>
+								<label>Room number:</label>
+								&nbsp &nbsp &nbsp &nbsp &nbsp 
+								<input type="text" name="Room_number" required="">
+								<br><br>
+								<label>Maintenance needed:</label>
+								<input type="text" name="Maintenance_needed" required="">
+								<br><br>
+								&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+								<button type="reset" name="reset" id="feedbackbtn">RESET</button>
+									&nbsp &nbsp &nbsp
+								<input type="submit" name="submit_btn" id="feedbackbtn" value="SUBMIT">
+								{% if messages %}
+								{% for message in messages %}
+								<b style="color: red;">{{message}}</b>
+								{% endfor %}
+								{% endif %}
+								</center>
+							</form>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="tr5">
+			<td></td>
+			<td colspan="4">
+				<h3>For more information contact</h3>
+				<a href="https://accounts.google.com">kesang984@gmail.com</a><br> Phone number #17955304<br>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
